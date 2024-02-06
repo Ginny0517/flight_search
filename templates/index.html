@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/template.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container gradient-background">
+      <div class="card">
+        <div class="form">
+          <form method="post" action="#">
+            <div class="item">
+              <label for="cityCode"><h1>Fly to</h1></label>
+              <input
+                type="text"
+                name="cityCode"
+                id="cityCode"
+                placeholder="city code"
+              />
+            </div>
+            <div class="item">
+              <input type="submit" value="GO" class="button-blue" />
+            </div>
+          </form>
+        </div>
+        <div class="flight item">
+          <h1>Fligth:</h1>
+          {% if data["flyFrom"]: %}
+          <h3>
+            {{data["flyFrom"]}}
+            <span style="font-size: 100px">&#8594;</span>
+            {{data["flyTo"]}}
+          </h3>
+          <h2>{{data["local_departure"][0:19].replace("T", " ")}}</h2>
+          <h3>
+            {{data["flyFrom"]}}<span style="font-size: 100px">&#8592;</span
+            >{{data["flyTo"]}}
+          </h3>
+          <h2>
+            {{data["route"][1]["local_departure"][0:19].replace("T", " ")}}
+          </h2>
+          <h3>TWD: ${{data["price"]}}</h3>
+          <h3><a href="{{data['deep_link']}}">Order link</a></h3>
+          {% else: %}
+          <h3>{{data}}</h3>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

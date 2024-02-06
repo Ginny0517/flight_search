@@ -1,0 +1,57 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 500px;
+  grid-template-rows: 900px;
+  justify-content: center;
+  margin: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(72, 72, 72, 0.4);
+  padding: 10px;
+}
+
+.item {
+  padding: 10px;
+  width: 450px;
+  margin: 10px;
+  background-color: #f0f1ec;
+}
+
+.button-blue {
+  width: 100%;
+  border: #ff9bd2 solid 4px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  font-size: 24px;
+}
+
+/* 網路上看到很酷的背景 */
+.gradient-background {
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
